@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"npm:dev:server\" \"npm:dev:client\"",
+    "dev": "concurrently --kill-others-on-fail --names server,client \"node --watch server/index.js\" \"vite\"",
     "dev:client": "vite",
     "dev:server": "node --watch server/index.js",
     "build": "vite build",
